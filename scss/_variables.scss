@@ -7,8 +7,8 @@
   --color-primary-dark: #485fb3;
   --color-white: #ffffff;
   --color-text-light: #aeb9c7;
-  --color-text-dark: #2e384d; }
-
+  --color-text-dark: #2e384d;
+}
 .dark {
   --color-bg-grey: #252e42;
   --color-bg-grey-light: #2f3b52;
@@ -18,25 +18,5 @@
   --color-primary-dark: #485fb3;
   --color-white: #ffffff;
   --color-text-light: #aeb9c7;
-  --color-text-dark: #ffffff; }
-
-input,
-textarea,
-select,
-button {
-  color: inherit;
-  font: inherit;
-  letter-spacing: inherit; }
-
-htm {
-  box-sizing: border-box;
-  font-family: 62.5%; }
-
-*,
-*::before,
-*::after {
-  box-sizing: inherit; }
-
-body {
-  line-height: 1.6;
-  font-weight: 400; }
+  --color-text-dark: #ffffff;
+}
