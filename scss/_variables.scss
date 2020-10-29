@@ -1,3 +1,7 @@
+$mobile: 500px;
+$tablet-portait: 800px;
+$tablet-landscape: 1080px;
+$big-screen: 1200px;
 :root {
   --color-bg-grey: #ebf1f4;
   --color-bg-grey-light: #ffffff;
@@ -6,17 +10,90 @@
   --color-primary-light-1: #b3c3ff;
   --color-primary-dark: #485fb3;
   --color-white: #ffffff;
-  --color-text-light: #aeb9c7;
+  --color-text-light: #818a96;
   --color-text-dark: #2e384d;
 }
 .dark {
-  --color-bg-grey: #252e42;
-  --color-bg-grey-light: #2f3b52;
+  --color-bg-grey: #161b27;
+  --color-bg-grey-light: #1d2531;
   --color-primary: #6c63ff;
   --color-primary-light: #d9e1ff;
   --color-primary-light-1: #b3c3ff;
   --color-primary-dark: #485fb3;
   --color-white: #ffffff;
-  --color-text-light: #aeb9c7;
+  --color-text-light: #818a96;
   --color-text-dark: #ffffff;
+}
+.hidden {
+  visibility: hidden;
+  opacity: 0;
+}
+.visible {
+  visibility: visible;
+  opacity: 1;
+}
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem);
+  }
+  80% {
+    transform: translateX(-0.8rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem);
+  }
+  80% {
+    transform: translateX(-2rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem);
+  }
+  80% {
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
+}
+@keyframes moveOutTop {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  80% {
+    transform: translateY(1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(-10rem);
+  }
+}
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem);
+  }
+  80% {
+    transform: translateY(-1rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translate(0);
+  }
 }

@@ -6,19 +6,77 @@
   --color-primary-light-1: #b3c3ff;
   --color-primary-dark: #485fb3;
   --color-white: #ffffff;
-  --color-text-light: #aeb9c7;
+  --color-text-light: #818a96;
   --color-text-dark: #2e384d; }
 
 .dark {
-  --color-bg-grey: #252e42;
-  --color-bg-grey-light: #2f3b52;
+  --color-bg-grey: #161b27;
+  --color-bg-grey-light: #1d2531;
   --color-primary: #6c63ff;
   --color-primary-light: #d9e1ff;
   --color-primary-light-1: #b3c3ff;
   --color-primary-dark: #485fb3;
   --color-white: #ffffff;
-  --color-text-light: #aeb9c7;
+  --color-text-light: #818a96;
   --color-text-dark: #ffffff; }
+
+.hidden {
+  visibility: hidden;
+  opacity: 0; }
+
+.visible {
+  visibility: visible;
+  opacity: 1; }
+
+@keyframes moveInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(3rem); }
+  80% {
+    transform: translateX(-0.8rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(10rem); }
+  80% {
+    transform: translateX(-2rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveInTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-10rem); }
+  80% {
+    transform: translateY(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
+
+@keyframes moveOutTop {
+  0% {
+    opacity: 0;
+    transform: translateY(0); }
+  80% {
+    transform: translateY(1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(-10rem); } }
+
+@keyframes moveInBottom {
+  0% {
+    opacity: 0;
+    transform: translateY(10rem); }
+  80% {
+    transform: translateY(-1rem); }
+  100% {
+    opacity: 1;
+    transform: translate(0); } }
 
 input,
 textarea,
@@ -26,17 +84,110 @@ select,
 button {
   color: inherit;
   font: inherit;
-  letter-spacing: inherit; }
+  letter-spacing: inherit;
+  -webkit-tap-highlight-color: transparent; }
 
-htm {
+svg,
+a {
+  -webkit-tap-highlight-color: transparent; }
+
+html {
   box-sizing: border-box;
-  font-family: 62.5%; }
+  font-size: 62.5%; }
 
 *,
 *::before,
 *::after {
-  box-sizing: inherit; }
+  box-sizing: inherit;
+  margin: 0;
+  padding: 0; }
 
 body {
+  font-family: "Inconsolata", monospace;
   line-height: 1.6;
-  font-weight: 400; }
+  font-weight: 400;
+  background-color: var(--color-bg-grey); }
+
+.navigation {
+  position: relative;
+  background-color: var(--color-bg-grey-light); }
+  .navigation__box {
+    background-color: inherit;
+    padding: 1rem;
+    max-width: 98rem;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center; }
+  .navigation__logo-box {
+    position: relative;
+    z-index: 69;
+    margin-right: auto; }
+  .navigation__links {
+    display: flex; }
+  .navigation__logo {
+    height: 3rem; }
+  .navigation__icon {
+    height: 1.6rem;
+    margin-right: 0.5rem; }
+  .navigation__link {
+    margin-right: 2rem;
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    font-size: 1.6rem;
+    font-weight: 600;
+    color: var(--color-text-light);
+    transition: all 0.4s; }
+    .navigation__link:hover {
+      color: var(--color-text-dark);
+      transform: translateX(0.5rem); }
+  .navigation__switch {
+    cursor: pointer;
+    height: 3rem;
+    width: 3rem;
+    font-size: inherit;
+    transition: transform 0.4s; }
+  .navigation__responsive {
+    display: none;
+    position: relative;
+    z-index: 69;
+    color: var(--color-text-dark); }
+  .navigation__show-links {
+    transform: translateY(0) !important;
+    visibility: visible !important; }
+  @media only screen and (max-width: 800px) {
+    .navigation__responsive {
+      display: block; }
+    .navigation__link {
+      margin: 0;
+      margin-bottom: 2rem; }
+    .navigation__links {
+      visibility: hidden;
+      height: 100vh;
+      padding: 6rem;
+      position: absolute;
+      top: 0;
+      left: 0;
+      transform: translateY(-100%);
+      align-items: center;
+      width: 100%;
+      background-color: inherit;
+      display: flex;
+      flex-direction: column;
+      transition: all 0.4s; } }
+
+.rotate {
+  transform: rotate(90deg); }
+
+#moon {
+  transition: opacity 0.8s, transform 1.1s; }
+  #moon:active {
+    transform: translateX(1.7rem); }
+
+#sun:active {
+  transition: opacity 0.8s, transform 1.1s;
+  transform: translateX(-1.7rem); }
+
+u-slow {
+  transition: all 1s; }
