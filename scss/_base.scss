@@ -6,6 +6,10 @@ button {
   font: inherit;
   letter-spacing: inherit;
   -webkit-tap-highlight-color: transparent;
+  border: none;
+  &:focus {
+    outline: none;
+  }
 }
 svg,
 a {
@@ -13,6 +17,7 @@ a {
 }
 
 html {
+  scroll-behavior: smooth;
   box-sizing: border-box;
   font-size: 62.5%;
 }
@@ -24,7 +29,7 @@ html {
   padding: 0;
 }
 body {
-  font-family: "Inconsolata", monospace;
+  font-family: "Quicksand", sans-serif;
   line-height: 1.6;
   font-weight: 400;
   background-color: var(--color-bg-grey);

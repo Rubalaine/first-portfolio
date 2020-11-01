@@ -1,13 +1,20 @@
 :root {
-  --color-bg-grey: #ebf1f4;
+  --color-black: #000000;
+  --color-bg-grey: #f9fafb;
   --color-bg-grey-light: #ffffff;
   --color-primary: #6c63ff;
+  --color-primary-1: #544bfa;
+  --color-secondary: #007fff;
+  --color-secondary-1: #006bd6;
   --color-primary-light: #d9e1ff;
   --color-primary-light-1: #b3c3ff;
   --color-primary-dark: #485fb3;
   --color-white: #ffffff;
-  --color-text-light: #818a96;
-  --color-text-dark: #2e384d; }
+  --color-text-light: #707275;
+  --color-text-dark: #2e384d;
+  --small-shadow: 0 0 0 1px rgba(0, 0, 0, 0.05);
+  --normal-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --big-shadow: 0px 0px 7px 1px rgba(0, 0, 0, 0.11); }
 
 .dark {
   --color-bg-grey: #161b27;
@@ -48,13 +55,20 @@ button {
   color: inherit;
   font: inherit;
   letter-spacing: inherit;
-  -webkit-tap-highlight-color: transparent; }
+  -webkit-tap-highlight-color: transparent;
+  border: none; }
+  input:focus,
+  textarea:focus,
+  select:focus,
+  button:focus {
+    outline: none; }
 
 svg,
 a {
   -webkit-tap-highlight-color: transparent; }
 
 html {
+  scroll-behavior: smooth;
   box-sizing: border-box;
   font-size: 62.5%; }
 
@@ -66,14 +80,18 @@ html {
   padding: 0; }
 
 body {
-  font-family: "Inconsolata", monospace;
+  font-family: "Quicksand", sans-serif;
   line-height: 1.6;
   font-weight: 400;
   background-color: var(--color-bg-grey); }
 
 .navigation {
-  position: relative;
-  background-color: var(--color-bg-grey-light); }
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: var(--color-bg-grey-light);
+  z-index: 70; }
   .navigation__box {
     background-color: inherit;
     padding: 1rem;
@@ -117,7 +135,7 @@ body {
     z-index: 69;
     color: var(--color-text-dark); }
   .navigation__show-links {
-    transform: translateX(0) !important;
+    transform: translateY(0) !important;
     visibility: visible !important; }
   @media only screen and (max-width: 800px) {
     .navigation__responsive {
@@ -132,7 +150,7 @@ body {
       position: absolute;
       top: 0;
       left: 0;
-      transform: translateX(100%);
+      transform: translateY(-100%);
       align-items: center;
       width: 100%;
       background-color: inherit;
@@ -163,10 +181,11 @@ body {
     .header {
       flex-direction: column; }
       .header__ilustration {
-        display: none; }
+        display: none !important; }
       .header__ilustration, .header__about {
         width: 100% !important; } }
   .header__ilustration {
+    display: flex;
     width: 50%; }
   .header__text {
     font-weight: 500;
@@ -175,7 +194,66 @@ body {
   .header__about {
     width: 50%; }
   .header__image {
-    width: 100%; }
+    margin-left: auto;
+    width: 100%;
+    display: inline-block; }
+
+.btn {
+  font-size: 1.6rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 0.7rem 1.4rem;
+  background-color: var(--color-primary);
+  color: var(--color-white);
+  cursor: pointer;
+  border-radius: 0.5rem;
+  transition: background-color 0.2s;
+  display: inline-block; }
+  .btn:hover {
+    background-color: var(--color-primary-1); }
+
+.main {
+  max-width: 98rem;
+  margin: 2rem auto;
+  padding: 3rem; }
+
+.grid {
+  display: grid;
+  grid-template-rows: repeat(4, minmax(10rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  gap: 2rem; }
+
+.column {
+  min-height: 10rem; }
+
+.project {
+  background-color: var(--color-bg-grey-light);
+  border-radius: 0.5rem;
+  box-shadow: var(--small-shadow);
+  padding: 1rem; }
+  .project__image-box {
+    overflow: hidden; }
+  .project:not(:last-child) {
+    margin-bottom: 2rem; }
+  .project__image {
+    width: 100%;
+    transition: transform 0.5s; }
+    .project__image:hover {
+      transform: scale(1.4); }
+  .project__title {
+    font-weight: 600;
+    font-size: 1.6rem;
+    color: var(--color-text-dark); }
+  .project__text {
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--color-text-light); }
+
+.heading__title {
+  margin: 1rem 3rem;
+  font-size: 3rem;
+  color: var(--color-text-dark);
+  text-align: center; }
 
 u-slow {
   transition: all 1s; }

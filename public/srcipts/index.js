@@ -14,9 +14,9 @@ const darkMode = document.getElementById("dark-switch");
 // };
 document.addEventListener("DOMContentLoaded", (event) => {
   event.preventDefault();
-  document.body.classList.add(localStorage.theme || "s");
-  document.getElementById("sun").classList.remove(localStorage.sun || "s");
-  document.getElementById("moon").classList.add(localStorage.sun || "s");
+  document.body.classList.add(localStorage.theme || " ");
+  document.getElementById("sun").classList.remove(localStorage.sun || " ");
+  document.getElementById("moon").classList.add(localStorage.sun || " ");
 });
 if (showNav)
   showNav.addEventListener("click", (event) => {
