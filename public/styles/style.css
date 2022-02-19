@@ -85,6 +85,18 @@ body {
   font-weight: 400;
   background-color: var(--color-bg-grey); }
 
+.loading {
+  z-index: 999;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  font-size: 5rem;
+  color: #000000;
+  background-color: var(--color-bg-grey-light); }
+
 .navigation {
   position: fixed;
   top: 0;
